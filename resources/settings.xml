@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Options>
+  <General>
+    <AutoSave>False</AutoSave>
+    <AutoSaveSpeed>0</AutoSaveSpeed>
+    <AutoScroll>True</AutoScroll>
+    <Music>False</Music>
+    <NpcBar>False</NpcBar>
+    <NpcDamage>False</NpcDamage>
+    <NpcName>True</NpcName>
+    <PlayerBar>False</PlayerBar>
+    <PlayerDamage>False</PlayerDamage>
+    <PlayerName>True</PlayerName>
+    <SavedAccount />
+    <SavedPassword />
+    <Sound>False</Sound>
+    <SpeechBubbles>False</SpeechBubbles>
+    <Timestamps>False</Timestamps>
+    <ActiveSkin>Main Theme</ActiveSkin>
+  </General>
+  <ConnectionInfo>
+    <Port>4001</Port>
+    <Server>localhost</Server>
+    <UpdateLink></UpdateLink>
+    <MusicLink>http://www.pmuniverse.net/game/music/</MusicLink>
+    <SFXLink>http://www.pmuniverse.net/game/SoundFX/</SFXLink>
+  </ConnectionInfo>
+  <Editor>
+    <MapGrid>False</MapGrid>
+    <DisplayAttributes>False</DisplayAttributes>
+    <DragAndPlace>False</DragAndPlace>
+  </Editor>
+</Options>

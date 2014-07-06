@@ -1,0 +1,542 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{FBA83BC0-C6B7-4455-A23A-3D899E41CE57}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Client.Logic</RootNamespace>
+    <AssemblyName>PMU</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <SourceAnalysisOverrideSettingsFile>C:\Users\Pikablu\AppData\Roaming\ICSharpCode/SharpDevelop3.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <DocumentationFile>bin\Debug\Client.Logic.xml</DocumentationFile>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DefineConstants>DEBUG</DefineConstants>
+    <DocumentationFile>bin\Debug\PMU.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Client.Logic.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>pmuicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="PMU.Compression">
+      <HintPath>..\..\framework\compression\build\PMU.Compression.dll</HintPath>
+    </Reference>
+    <Reference Include="PMU.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\framework\core\build\PMU.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="PMU.Net">
+      <HintPath>..\..\framework\net\build\PMU.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="PMU.Sockets">
+      <HintPath>..\..\framework\sockets\build\PMU.Sockets.dll</HintPath>
+    </Reference>
+    <Reference Include="Puzzle.SyntaxBox.NET3.5">
+      <HintPath>..\Dependencies\Puzzle.SyntaxBox.NET3.5.dll</HintPath>
+    </Reference>
+    <Reference Include="SdlDotNet, Version=6.9.0.0, Culture=neutral, PublicKeyToken=26ad4f7e10c61408, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependencies\SdlDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Updater">
+      <HintPath>..\Dependencies\Updater.dll</HintPath>
+    </Reference>
+    <Reference Include="Updater.Linker">
+      <HintPath>..\Dependencies\Updater.Linker.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Algorithms\Pathfinder\AStarPathfinder.cs" />
+    <Compile Include="Algorithms\Pathfinder\IPathfinder.cs" />
+    <Compile Include="Algorithms\Pathfinder\PathfinderResult.cs" />
+    <Compile Include="Algorithms\Pathfinder\PathfinderSquare.cs" />
+    <Compile Include="Arrows\Arrow.cs" />
+    <Compile Include="Arrows\ArrowCollection.cs" />
+    <Compile Include="Arrows\ArrowHelper.cs" />
+    <Compile Include="Core\BytePacker.cs" />
+    <Compile Include="Core\BytePackerItem.cs" />
+    <Compile Include="Core\ByteUnpacker.cs" />
+    <Compile Include="CommandProcessor.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="CustomMenus\CustomMenu.cs" />
+    <Compile Include="CustomMenus\CustomMenuOptions.cs" />
+    <Compile Include="DataManager.cs" />
+    <Compile Include="Dungeons\Dungeon.cs" />
+    <Compile Include="Dungeons\DungeonCollection.cs" />
+    <Compile Include="Dungeons\DungeonHelper.cs" />
+    <Compile Include="Editors\Dungeons\EditableDungeon.cs" />
+    <Compile Include="Editors\Dungeons\EditableRandomDungeonMap.cs" />
+    <Compile Include="Editors\Dungeons\EditableStandardDungeonMap.cs" />
+    <Compile Include="Editors\Missions\EditableMissionClient.cs" />
+    <Compile Include="Editors\Missions\EditableMissionPool.cs" />
+    <Compile Include="Editors\Missions\EditableMissionReward.cs" />
+    <Compile Include="Editors\Moves\EditableMove.cs" />
+    <Compile Include="Editors\NPCs\EditableNPC.cs" />
+    <Compile Include="Editors\NPCs\EditableNpcDrop.cs" />
+    <Compile Include="Editors\RDungeons\EditableRDungeon.cs" />
+    <Compile Include="Editors\RDungeons\EditableRDungeonChamber.cs" />
+    <Compile Include="Editors\RDungeons\EditableRDungeonFloor.cs" />
+    <Compile Include="Editors\RDungeons\EditableRDungeonItem.cs" />
+    <Compile Include="Editors\RDungeons\EditableRDungeonTrap.cs" />
+    <Compile Include="Editors\Stories\EditableStory.cs" />
+    <Compile Include="Editors\Stories\EditableStorySegment.cs" />
+    <Compile Include="Emotions\Emotion.cs" />
+    <Compile Include="Emotions\EmotionCollection.cs" />
+    <Compile Include="Emotions\EmotionHelper.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="Events\ActiveRecruitChangedEventArgs.cs" />
+    <Compile Include="Evolutions\Evolution.cs" />
+    <Compile Include="Evolutions\EvolutionBranch.cs" />
+    <Compile Include="Evolutions\EvolutionCollection.cs" />
+    <Compile Include="Evolutions\EvolutionHelper.cs" />
+    <Compile Include="Exceptions\ErrorBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Exceptions\ErrorBox.designer.cs" />
+    <Compile Include="Exceptions\ExceptionHandler.cs" />
+    <Compile Include="ExpKit\IKitModule.cs" />
+    <Compile Include="ExpKit\KitContainer.cs" />
+    <Compile Include="ExpKit\Modules\kitMapReport.cs" />
+    <Compile Include="ExpKit\Modules\kitFriendsList.cs" />
+    <Compile Include="ExpKit\Modules\kitParty.cs" />
+    <Compile Include="ExpKit\Modules\kitChat.cs" />
+    <Compile Include="ExpKit\Modules\kitCounter.cs" />
+    <Compile Include="ExpKit\Modules\kitDebug.cs" />
+    <Compile Include="ExpKit\ModuleSwitcher.cs" />
+    <Compile Include="GameProcessor.cs" />
+    <Compile Include="Graphics\Effects\Overlays\DarknessOverlay.cs" />
+    <Compile Include="Graphics\Effects\Overlays\DawnOverlay.cs" />
+    <Compile Include="Graphics\Effects\Overlays\DuskOverlay.cs" />
+    <Compile Include="Graphics\Effects\Overlays\ScreenOverlays\MapChangeInfoOverlay.cs" />
+    <Compile Include="Graphics\Effects\Weather\Ash.cs" />
+    <Compile Include="Graphics\Effects\Weather\Ashfall.cs" />
+    <Compile Include="Graphics\Effects\Weather\Cloudy.cs" />
+    <Compile Include="Graphics\Effects\Weather\Diamond.cs" />
+    <Compile Include="Graphics\Effects\Weather\DiamondDust.cs" />
+    <Compile Include="Graphics\Effects\Weather\Fog.cs" />
+    <Compile Include="Graphics\Effects\Weather\Hail.cs" />
+    <Compile Include="Graphics\Effects\Weather\Hailstone.cs" />
+    <Compile Include="Graphics\Effects\Weather\IWeather.cs" />
+    <Compile Include="Graphics\Effects\Weather\Raindrop.cs" />
+    <Compile Include="Graphics\Effects\Weather\Sandstorm.cs" />
+    <Compile Include="Graphics\Effects\Weather\Snow.cs" />
+    <Compile Include="Graphics\Effects\Weather\Rain.cs" />
+    <Compile Include="Graphics\Effects\Weather\Snowflake.cs" />
+    <Compile Include="Graphics\Effects\Weather\Snowstorm.cs" />
+    <Compile Include="Graphics\Effects\Weather\Sunny.cs" />
+    <Compile Include="Graphics\Effects\Weather\Thunder.cs" />
+    <Compile Include="Graphics\GraphicsCache.cs" />
+    <Compile Include="Graphics\Effects\Overlays\IOverlay.cs" />
+    <Compile Include="Graphics\Effects\Overlays\NightOverlay.cs" />
+    <Compile Include="Globals.cs" />
+    <Compile Include="Graphics\DrawingSupport.cs" />
+    <Compile Include="Graphics\Mugshot.cs" />
+    <Compile Include="Graphics\Renderers\Items\ItemRenderer.cs" />
+    <Compile Include="Graphics\Renderers\Maps\MapRenderer.cs" />
+    <Compile Include="Graphics\Renderers\Maps\SeamlessWorldHelper.cs" />
+    <Compile Include="Graphics\Renderers\Moves\ArrowMoveAnimation.cs" />
+    <Compile Include="Graphics\Renderers\Moves\BeamMoveAnimation.cs" />
+    <Compile Include="Graphics\Renderers\Moves\ItemArrowMoveAnimation.cs" />
+    <Compile Include="Graphics\Renderers\Moves\ItemThrowMoveAnimation.cs" />
+    <Compile Include="Graphics\Renderers\Moves\MoveRenderer.cs" />
+    <Compile Include="Graphics\Renderers\Moves\NormalMoveAnimation.cs" />
+    <Compile Include="Graphics\Renderers\Moves\OverlayMoveAnimation.cs" />
+    <Compile Include="Graphics\Renderers\Moves\IMoveAnimation.cs" />
+    <Compile Include="Graphics\Renderers\Moves\ThrowMoveAnimation.cs" />
+    <Compile Include="Graphics\Renderers\Moves\TileMoveAnimation.cs" />
+    <Compile Include="Graphics\Renderers\Npcs\NpcRenderer.cs" />
+    <Compile Include="Graphics\Renderers\Players\PlayerRenderer.cs" />
+    <Compile Include="Graphics\Renderers\RendererDestinationData.cs" />
+    <Compile Include="Graphics\Renderers\RenderLocation.cs" />
+    <Compile Include="Graphics\Renderers\Screen\Camera.cs" />
+    <Compile Include="Graphics\Renderers\Screen\CameraFocusObject.cs" />
+    <Compile Include="Graphics\Renderers\Screen\ScreenRenderer.cs" />
+    <Compile Include="Graphics\Renderers\Screen\ScreenRenderOptions.cs" />
+    <Compile Include="Graphics\Renderers\Sprites\Emoticon.cs" />
+    <Compile Include="Graphics\Renderers\Sprites\ISprite.cs" />
+    <Compile Include="Graphics\Renderers\Sprites\SpeechBubble.cs" />
+    <Compile Include="Graphics\Renderers\Sprites\SpriteRenderer.cs" />
+    <Compile Include="Graphics\Renderers\TextRenderer.cs" />
+    <Compile Include="Graphics\SpellSheet.cs" />
+    <Compile Include="Graphics\SpriteSheet.cs" />
+    <Compile Include="Graphics\SurfaceManager.cs" />
+    <Compile Include="Graphics\TileCache.cs" />
+    <Compile Include="Graphics\TileCollection.cs" />
+    <Compile Include="Graphics\TileGraphic.cs" />
+    <Compile Include="Graphics\Tileset.cs" />
+    <Compile Include="Graphics\WorldMapBuilder.cs" />
+    <Compile Include="Input\InputProcessor.cs" />
+    <Compile Include="IO\ControlLoader.cs" />
+    <Compile Include="IO\Paths.cs" />
+    <Compile Include="Loader.cs" />
+    <Compile Include="Graphics\FontManager.cs" />
+    <Compile Include="Graphics\GraphicsManager.cs" />
+    <Compile Include="IO\IO.cs" />
+    <Compile Include="IO\Options.cs" />
+    <Compile Include="Items\Item.cs" />
+    <Compile Include="Items\ItemCollection.cs" />
+    <Compile Include="Items\ItemHelper.cs" />
+    <Compile Include="Logs\BattleLog.cs" />
+    <Compile Include="Maps\DungeonRoom.cs" />
+    <Compile Include="Maps\HouseProperties.cs" />
+    <Compile Include="Maps\Map.cs" />
+    <Compile Include="Maps\MapCollection.cs" />
+    <Compile Include="Maps\MapHelper.cs" />
+    <Compile Include="Maps\MapItem.cs" />
+    <Compile Include="Maps\MapNpc.cs" />
+    <Compile Include="Maps\MapNpcSettings.cs" />
+    <Compile Include="Maps\Tile.cs" />
+    <Compile Include="Math.cs" />
+    <Compile Include="MaxInfo.cs" />
+    <Compile Include="Menus\mnuChangeDarkness.cs" />
+    <Compile Include="Menus\mnuChangeBounds.cs" />
+    <Compile Include="Menus\mnuChangeWeather.cs" />
+    <Compile Include="Menus\mnuAddNotice.cs" />
+    <Compile Include="Menus\mnuAddShop.cs" />
+    <Compile Include="Menus\mnuAddSign.cs" />
+    <Compile Include="Menus\mnuAddSound.cs" />
+    <Compile Include="Menus\mnuAdventureLog.cs" />
+    <Compile Include="Menus\mnuBattleLog.cs" />
+    <Compile Include="Menus\mnuGuildCreate.cs" />
+    <Compile Include="Menus\mnuGuildManage.cs" />
+    <Compile Include="Menus\mnuTournamentMatchUpViewer.cs" />
+    <Compile Include="Menus\mnuTournamentRulesEditor.cs" />
+    <Compile Include="Menus\mnuTournamentListingSelected.cs" />
+    <Compile Include="Menus\mnuMoveRecall.cs" />
+    <Compile Include="Menus\mnuHelpPage.cs" />
+    <Compile Include="Menus\mnuHelpTopics.cs" />
+    <Compile Include="Menus\mnuJobDescription.cs" />
+    <Compile Include="Menus\mnuAssembly.cs" />
+    <Compile Include="Menus\mnuBank.cs" />
+    <Compile Include="Menus\mnuBankItemSelected.cs" />
+    <Compile Include="Menus\mnuBankOptions.cs" />
+    <Compile Include="Menus\mnuItemSummary.cs" />
+    <Compile Include="Menus\mnuJobSelected.cs" />
+    <Compile Include="Menus\mnuMissionBoard.cs" />
+    <Compile Include="Menus\mnuJobList.cs" />
+    <Compile Include="Menus\mnuMoveOverwrite.cs" />
+    <Compile Include="Menus\mnuMoves.cs" />
+    <Compile Include="Menus\mnuMoveSelected.cs" />
+    <Compile Include="Menus\mnuGuild.cs" />
+    <Compile Include="Menus\mnuOnlineList.cs" />
+    <Compile Include="Menus\mnuOptions.cs" />
+    <Compile Include="Menus\mnuOthers.cs" />
+    <Compile Include="Menus\Core\IMenu.cs" />
+    <Compile Include="Menus\Core\MenuBase.cs" />
+    <Compile Include="Menus\Core\MenuInputProcessor.cs" />
+    <Compile Include="Menus\Core\MenuManager.cs" />
+    <Compile Include="Menus\mnuBasicStats.cs" />
+    <Compile Include="Menus\mnuInventory.cs" />
+    <Compile Include="Menus\mnuItemSelected.cs" />
+    <Compile Include="Menus\mnuMainMenu.cs" />
+    <Compile Include="Menus\mnuMapInfo.cs" />
+    <Compile Include="Menus\MenuSwitcher.cs" />
+    <Compile Include="Menus\mnuRecruitSelected.cs" />
+    <Compile Include="Menus\mnuShop.cs" />
+    <Compile Include="Menus\mnuShopItemSelected.cs" />
+    <Compile Include="Menus\mnuShopOptions.cs" />
+    <Compile Include="Menus\mnuTeam.cs" />
+    <Compile Include="Menus\mnuTeamSelected.cs" />
+    <Compile Include="Menus\mnuTournamentListing.cs" />
+    <Compile Include="Menus\mnuTournamentRulesViewer.cs" />
+    <Compile Include="Menus\mnuTrade.cs" />
+    <Compile Include="Menus\mnuVisitHouse.cs" />
+    <Compile Include="Missions\Job.cs" />
+    <Compile Include="Missions\MissionManager.cs" />
+    <Compile Include="Missions\JobList.cs" />
+    <Compile Include="Missions\Mission.cs" />
+    <Compile Include="Missions\MissionCollection.cs" />
+    <Compile Include="Missions\MissionGoal.cs" />
+    <Compile Include="Missions\MissionHelper.cs" />
+    <Compile Include="Moves\Move.cs" />
+    <Compile Include="Moves\MoveCollection.cs" />
+    <Compile Include="Moves\MoveHelper.cs" />
+    <Compile Include="Music\AudioHelper.cs" />
+    <Compile Include="Music\Bass\Bass.cs" />
+    <Compile Include="Music\Bass\BassAudioPlayer.cs" />
+    <Compile Include="Music\Bass\AudioDataCache.cs" />
+    <Compile Include="Music\IAudioPlayer.cs" />
+    <Compile Include="Music\Music.cs" />
+    <Compile Include="Music\MusicPlayer.cs" />
+    <Compile Include="Music\TrackList.cs" />
+    <Compile Include="Music\TrackListEntry.cs" />
+    <Compile Include="Network\NetworkManager.cs" />
+    <Compile Include="Network\PacketList.cs" />
+    <Compile Include="Npc\Npc.cs" />
+    <Compile Include="Npc\NpcCollection.cs" />
+    <Compile Include="Npc\NpcDrop.cs" />
+    <Compile Include="Npc\NpcHelper.cs" />
+    <Compile Include="ObjectCopier.cs" />
+    <Compile Include="Players\Friend.cs" />
+    <Compile Include="Players\GenericPlayer.cs" />
+    <Compile Include="Players\Inventory.cs" />
+    <Compile Include="Players\InventoryItem.cs" />
+    <Compile Include="Players\IPlayer.cs" />
+    <Compile Include="Players\Mail\IMail.cs" />
+    <Compile Include="Players\Mail\MailBox.cs" />
+    <Compile Include="Players\Mail\MailCollection.cs" />
+    <Compile Include="Players\Mail\MailType.cs" />
+    <Compile Include="Players\Mail\MessageMail.cs" />
+    <Compile Include="Players\MyPlayer.cs" />
+    <Compile Include="Players\Parties\PartyData.cs" />
+    <Compile Include="Players\Parties\PartyMember.cs" />
+    <Compile Include="Players\Player.cs" />
+    <Compile Include="Players\PlayerArrow.cs" />
+    <Compile Include="Players\PlayerCollection.cs" />
+    <Compile Include="Players\PlayerManager.cs" />
+    <Compile Include="Players\PlayerPet.cs" />
+    <Compile Include="Players\PlayerType.cs" />
+    <Compile Include="Players\Recruit.cs" />
+    <Compile Include="Players\RecruitMove.cs" />
+    <Compile Include="Pokedex\Pokemon.cs" />
+    <Compile Include="Pokedex\PokemonCollection.cs" />
+    <Compile Include="Pokedex\PokemonHelper.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Ranks.cs" />
+    <Compile Include="RDungeons\RDungeon.cs" />
+    <Compile Include="RDungeons\RDungeonCollection.cs" />
+    <Compile Include="RDungeons\RDungeonHelper.cs" />
+    <Compile Include="Sdl\SdlCore.cs" />
+    <Compile Include="Sdl\SdlEventHandler.cs" />
+    <Compile Include="Sdl\SdlLoader.cs" />
+    <Compile Include="Security\Admin.cs" />
+    <Compile Include="Security\Encryption.cs" />
+    <Compile Include="Security\Hash.cs" />
+    <Compile Include="Shops\Shop.cs" />
+    <Compile Include="Shops\ShopCollection.cs" />
+    <Compile Include="Shops\ShopHelper.cs" />
+    <Compile Include="Shops\ShopItem.cs" />
+    <Compile Include="Skins\Skin.cs" />
+    <Compile Include="Skins\SkinManager.cs" />
+    <Compile Include="Stories\Components\OptionSelectionMenu.cs" />
+    <Compile Include="Stories\Components\ScreenImageOverlay.cs" />
+    <Compile Include="Stories\Components\SpokenTextMenu.cs" />
+    <Compile Include="Stories\FNPCs\FNPC.cs" />
+    <Compile Include="Stories\Globals.cs" />
+    <Compile Include="Stories\Segments\AskQuestionSegment.cs" />
+    <Compile Include="Stories\Segments\ChangeFNPCDirectionSegment.cs" />
+    <Compile Include="Stories\Segments\ChangePlayerDirectionSegment.cs" />
+    <Compile Include="Stories\Segments\MovePlayerSegment.cs" />
+    <Compile Include="Stories\Segments\DeleteFNPCSegment.cs" />
+    <Compile Include="Stories\Segments\GoToSegmentSegment.cs" />
+    <Compile Include="Stories\Segments\WarpFNPCSegment.cs" />
+    <Compile Include="Stories\Segments\MoveFNPCSegment.cs" />
+    <Compile Include="Stories\Segments\CreateFNPCSegment.cs" />
+    <Compile Include="Stories\Segments\ShowPlayersSegment.cs" />
+    <Compile Include="Stories\Segments\HidePlayersSegment.cs" />
+    <Compile Include="Stories\Segments\RunScriptSegment.cs" />
+    <Compile Include="Stories\Segments\HideBackgroundSegment.cs" />
+    <Compile Include="Stories\Segments\ShowBackgroundSegment.cs" />
+    <Compile Include="Stories\Segments\PlayerPadlockSegment.cs" />
+    <Compile Include="Stories\Segments\WarpSegment.cs" />
+    <Compile Include="Stories\Segments\HideImageSegment.cs" />
+    <Compile Include="Stories\Segments\ShowImageSegment.cs" />
+    <Compile Include="Stories\Segments\StopMusicSegment.cs" />
+    <Compile Include="Stories\Segments\PlayMusicSegment.cs" />
+    <Compile Include="Stories\Segments\MapVisibilitySegment.cs" />
+    <Compile Include="Stories\Segments\PadlockSegment.cs" />
+    <Compile Include="Stories\Segments\PauseSegment.cs" />
+    <Compile Include="Stories\Segments\ISegment.cs" />
+    <Compile Include="Stories\Segment.cs" />
+    <Compile Include="Stories\Segments\SaySegment.cs" />
+    <Compile Include="Stories\Segments\SegmentDataSplitter.cs" />
+    <Compile Include="Stories\Story.cs" />
+    <Compile Include="Stories\StoryCollection.cs" />
+    <Compile Include="Stories\StoryHelper.cs" />
+    <Compile Include="Stories\StoryProcessor.cs" />
+    <Compile Include="Stories\StoryState.cs" />
+    <Compile Include="SwearFilter.cs" />
+    <Compile Include="Network\PacketModifiers.cs" />
+    <Compile Include="Network\MessageProcessor.cs" />
+    <Compile Include="Network\Messenger.cs" />
+    <Compile Include="Tools.cs" />
+    <Compile Include="Tournaments\MatchUp.cs" />
+    <Compile Include="Tournaments\TournamentListing.cs" />
+    <Compile Include="Tournaments\TournamentRules.cs" />
+    <Compile Include="Updater\UpdateEngine.cs" />
+    <Compile Include="Updater\Widgets\PackageButton.cs" />
+    <Compile Include="Updater\Widgets\PackageButtonSelectedEventArgs.cs" />
+    <Compile Include="Updater\Widgets\PackageScroller.cs" />
+    <Compile Include="Updater\winUpdater.cs" />
+    <Compile Include="Widgets\ActiveTeamPanel.cs" />
+    <Compile Include="Widgets\BattleLog.cs" />
+    <Compile Include="Widgets\BorderedPanel.cs" />
+    <Compile Include="Widgets\ItemsetViewer.cs" />
+    <Compile Include="Widgets\MissionTitle.cs" />
+    <Compile Include="Widgets\MapViewer.cs" />
+    <Compile Include="Widgets\MenuItemPicker.cs" />
+    <Compile Include="Widgets\MenuNumberSelector.cs" />
+    <Compile Include="Widgets\ShortcutBar.cs" />
+    <Compile Include="Widgets\ShortcutButton.cs" />
+    <Compile Include="Widgets\StatLabel.cs" />
+    <Compile Include="Widgets\TilesetViewer.cs" />
+    <Compile Include="Maps\MapProperties.cs" />
+    <Compile Include="Windows\Editors\MapEditor\winHouseProperties.cs" />
+    <Compile Include="Windows\Editors\MapEditor\winProperties.cs" />
+    <Compile Include="Windows\Editors\ScriptEditor\frmScriptEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Editors\ScriptEditor\frmScriptEditor.Designer.cs">
+      <DependentUpon>frmScriptEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Editors\ScriptEditor\ScriptFileTab.cs" />
+    <Compile Include="Windows\Editors\winArrowPanel.cs" />
+    <Compile Include="Windows\Editors\winDungeonPanel.cs" />
+    <Compile Include="Windows\Editors\winEmotionPanel.cs" />
+    <Compile Include="Windows\Editors\winEvolutionPanel.cs" />
+    <Compile Include="Windows\Editors\winItemPanel.cs" />
+    <Compile Include="Windows\Editors\winMissionPanel.cs" />
+    <Compile Include="Windows\Editors\winMovePanel.cs" />
+    <Compile Include="Windows\Editors\winNPCPanel.cs" />
+    <Compile Include="Windows\Editors\winRDungeonPanel.cs" />
+    <Compile Include="Windows\Editors\winShopPanel.cs" />
+    <Compile Include="Windows\Editors\winStoryPanel.cs" />
+    <Compile Include="Windows\Editors\MapEditor\winScreenshotOptions.cs" />
+    <Compile Include="Windows\winOptions.cs" />
+    <Compile Include="Windows\winNewCharacter.cs" />
+    <Compile Include="Windows\winCredits.cs" />
+    <Compile Include="Windows\winAccountSettings.cs" />
+    <Compile Include="Windows\winChangePassword.cs" />
+    <Compile Include="Windows\winDeleteAccount.cs" />
+    <Compile Include="Windows\winNewAccount.cs" />
+    <Compile Include="Windows\Core\GameScreen.cs" />
+    <Compile Include="Windows\Core\TickStabalizer.cs" />
+    <Compile Include="Windows\Core\WindowCore.cs" />
+    <Compile Include="ShortcutBarBuilder.cs" />
+    <Compile Include="Windows\Editors\winGuildPanel.cs" />
+    <Compile Include="Windows\Editors\EditorManager.cs" />
+    <Compile Include="Windows\Editors\MapEditor\winGame.MapEditor.cs" />
+    <Compile Include="Windows\Editors\winAdminPanel.cs" />
+    <Compile Include="Windows\WindowSwitcher.cs" />
+    <Compile Include="Windows\winExpKit.cs" />
+    <Compile Include="Windows\winGame.cs" />
+    <Compile Include="Windows\winLoading.cs" />
+    <Compile Include="Windows\winLogin.cs" />
+    <Compile Include="Windows\winMainMenu.cs" />
+    <Compile Include="Windows\winSelectChar.cs" />
+    <Compile Include="Windows\winSkinSelector.cs" />
+    <Compile Include="Windows\winUpdates.cs" />
+    <EmbeddedResource Include="Windows\Editors\ScriptEditor\frmScriptEditor.resx">
+      <DependentUpon>frmScriptEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Resources\pmuicon.ico" />
+    <EmbeddedResource Include="Exceptions\ErrorBox.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Scripting\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.VisualBasic.PowerPacks.10.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual Basic PowerPacks 10.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="pmuicon.ico" />
+  </ItemGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Target Name="AfterBuild" Condition="'$(Configuration)' == 'Release' ">
+    <ItemGroup>
+      <DllFiles Include="..\Dependencies\Files\*.dll" />
+      <AssetFiles Include="..\resources\**\*" />
+    </ItemGroup>
+    <Copy SourceFiles="$(OutputPath)$(TargetFileName)" DestinationFolder="..\Build\" />
+    <Copy SourceFiles="@(DllFiles)" DestinationFolder="..\Build\" />
+    <Copy SourceFiles="@(AssetFiles)" DestinationFolder="..\Build\%(RecursiveDir)" />
+  </Target>
+</Project>
