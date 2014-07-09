@@ -43,3 +43,7 @@ Code:
 [www.pmuniverse.net]    Sprinko
 [www.pmuniverse.net]    Yatterman
 [www.pmuniverse.net]    Andy
+[www.pmuniverse.net]    Rocket
+[www.pmuniverse.net]    LuigiDude
+[www.pmuniverse.net]    Linkachu
+[www.pmuniverse.net]    DarkMazer
